@@ -1,0 +1,179 @@
+:root {
+  --moderate-cyan: hsl(176, 50%, 47%);
+  --dark-cyan: hsl(176, 72%, 28%);
+  --dark-gray: hsl(0, 0%, 48%);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.body-header {
+  height: 50vh;
+  background: url("../images/image-hero-mobile.jpg") no-repeat center;
+  background-size: cover;
+  box-shadow: inset 0px 40px 20px -10px #0004;
+  padding: 2rem 1.5rem 0;
+}
+
+.logo-container {
+  z-index: 11;
+}
+
+.logo-container > img {
+  width: 85%;
+}
+
+.hamburgur {
+  z-index: 11;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.back-modal {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #0003;
+  opacity: 0;
+  z-index: -12;
+  transition: opacity 0.1s linear;
+}
+
+.back-modal.active {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(180deg, #0008, #0001);
+  opacity: 1;
+  z-index: 10;
+}
+
+.nav-links {
+  width: 85%;
+  margin-top: 5rem;
+  background-color: white;
+  height: max-content;
+  list-style: none;
+  border-radius: 10px;
+  transform: translateY(0);
+  transition: transform 0.2s linear;
+}
+
+.nav-links.active {
+  width: 85%;
+  margin-top: 4rem;
+  background-color: white;
+  height: max-content;
+  list-style: none;
+  border-radius: 10px;
+  transform: translateY(20px);
+}
+
+.nav-link {
+  padding: 1.3rem 1.2rem;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-link > a {
+  color: #000;
+  text-decoration: none;
+  font-family: "Commissioner";
+  font-weight: 500;
+}
+
+.nav-link:not(:last-child) {
+  border-bottom: 1px solid #e7e4e4;
+}
+
+.hamburgur {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+  .body-header {
+    background: url("../images/image-hero-desktop.jpg") no-repeat center;
+    background-size: cover;
+    padding: 2rem 0 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-container {
+    z-index: 0;
+  }
+
+  .logo-container > img {
+    width: 75%;
+  }
+
+  .hamburgur {
+    display: none;
+  }
+
+  .nav-bar {
+    position: static;
+    align-items: flex-start;
+    width: 80%;
+    min-width: 550px;
+  }
+
+  .back-modal {
+    position: static;
+    height: unset;
+    width: unset;
+    top: unset;
+    left: unset;
+    display: block;
+    justify-content: unset;
+    background-color: transparent;
+    opacity: 1;
+    z-index: 0;
+    transition: unset;
+  }
+
+  .nav-links {
+    width: unset;
+    margin-top: 0;
+    background-color: transparent;
+    height: unset;
+    border-radius: 0;
+    transform: unset;
+    transition: unset;
+    display: flex;
+    gap:2rem;
+  }
+
+  .nav-link {
+    padding: 0;
+    color: #fff;
+  }
+
+  .nav-link > a {
+    color: #fff;
+    font-size: 0.7rem;
+  }
+
+  .nav-link:not(:last-child) {
+    border-bottom: none;
+  }
+}

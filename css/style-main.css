@@ -1,0 +1,368 @@
+:root {
+  --moderate-cyan: hsl(176, 50%, 47%);
+  --dark-cyan: hsl(176, 72%, 28%);
+  --dark-gray: hsl(0, 0%, 48%);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.body-main {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #f7f7f7;
+  font-family: "Commissioner";
+  padding-bottom: 4rem;
+}
+
+.wrapper {
+  width: 87%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: -50px;
+}
+
+.modal-contianer {
+  display: none;
+}
+
+.sec {
+  border: 1px solid #f0f0f0;
+  border-radius: 7px;
+  background-color: white;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.sec.mastercraft-moniter-riser {
+  position: relative;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.sec.mastercraft-moniter-riser::before {
+  content: url("../images/logo-mastercraft.svg");
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sec-heading {
+  font-size: 1.1rem;
+}
+
+.sec.mastercraft-moniter-riser .caption {
+  font-size: 0.7em;
+  color: var(--dark-gray);
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backing-button {
+  outline: none;
+  border: none;
+  background-color: var(--moderate-cyan);
+  font-family: "Commissioner";
+  font-size: 0.7em;
+  padding: 1.5em;
+  border-radius: 2.1em;
+  color: white;
+  font-weight: 700;
+  justify-self: stretch;
+  width: 75%;
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+}
+
+.backing-button:hover{
+  background-color: var(--dark-cyan);
+}
+
+
+.bookmark-label {
+  display: none;
+}
+
+.bookmark-icon {
+  width: 90%;
+}
+
+.bookmark.bookmarked .bookmark-icon{
+  filter: invert(41%) sepia(21%) saturate(1318%) hue-rotate(127deg) brightness(93%) contrast(100%);
+}
+
+.bookmark.bookmarked .bookmark-label{
+  color:#147b74;
+}
+
+.numbers{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+
+.number-container{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.line{
+    width:80px;
+    height:1px;
+    background-color: #dbd9d9;
+}
+
+.number{
+    font-size: 1.7rem;
+}
+
+.num-caption{
+    font-size: 0.7rem;
+    color:var(--dark-gray);
+}
+
+#range-bar{
+    width: 100%;
+    appearance: none;
+    height: 10px;
+    background-color: #e7e7e7;
+    border-radius: 12px;
+}
+
+#range-bar::-webkit-slider-thumb{
+    appearance: none;
+}
+
+#range-bar::-moz-range-thumb{
+    width: 0;
+    height: 0;
+    border:none;
+}
+
+.sec.about-project{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+
+.title{
+    margin-top: 0.7em;
+    font-size: 1.1rem;
+}
+
+.about-caption{
+    font-size: 0.8rem;
+    line-height: 1.7em;
+    color:var(--dark-gray)
+}
+
+.about-stats{
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+
+.stat{
+    border:1px solid #d1d0d0;
+    border-radius: 8px;
+    padding:1.3rem 1.1rem;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    gap:1.2rem;
+}
+
+.stat .flex{
+    display: flex;
+    flex-direction: column;
+    gap:0.3rem;
+}
+
+.stat .flex h1{
+    font-size: 0.89em;
+    font-weight: 700;
+}
+
+.stat .flex p{
+    color:var(--moderate-cyan);
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.stat .text{
+    color:var(--dark-gray);
+    font-size: 0.9em;
+    font-weight: 500;
+    line-height: 1.3rem;;
+}
+
+.stat .flex .left-num{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap:0.4rem;
+}
+
+.stat .flex .left-num>span{
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--dark-gray);
+}
+
+.reward{
+    border:none;
+    outline:none;
+    background-color: var(--moderate-cyan);
+    color:white;
+    font-family: 'Commissioner';
+    font-size: 0.77rem;
+    width: max-content;
+    padding:0.8rem 1.2rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.1s linear;
+}
+
+.reward:hover{
+  background-color: var(--dark-cyan);
+}
+
+.stat.disabled{
+    filter: opacity(0.4);
+    pointer-events: none;
+}
+
+.stat.disabled .reward{
+    background-color: var(--dark-gray);
+    cursor: default;
+}
+
+@media only screen and (min-width: 600px){
+  .body-main {
+    padding-bottom: 4rem;
+  }
+  
+  .wrapper {
+    width: 55%;
+    margin-top: -50px;
+    min-width: 500px;
+    max-width: 700px;
+  }
+  
+  .modal-contianer {
+    display: none;
+  }
+  
+  .sec {
+    padding: 2rem;
+  }
+  
+  .sec.mastercraft-moniter-riser {
+    gap: 1em;
+  }
+
+  .sec-heading {
+    font-size: 1.2rem;
+  }
+  
+  .sec.mastercraft-moniter-riser .caption {
+    font-size: 0.9em;
+    color: var(--dark-gray);
+  }
+  
+  .buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap:1rem;
+  }
+  
+  .backing-button {
+    padding: 1.2em 2rem;
+    justify-self: unset;
+    width: unset;
+    cursor: pointer;
+  }
+
+  .bookmark{
+    display: flex;
+    background-color: #efefef;
+    border-radius: 19.25px;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .bookmark-label {
+    display: block;
+    font-size: 0.8rem;
+    margin:0 0.8rem;
+    color:var(--dark-gray);
+    transition: all 0.1s linear;
+  }
+  
+  .bookmark-icon {
+    width: 38.5px;
+    transition: filter 0.2s linear;
+  }
+  
+  .numbers{
+      display: flex;
+      flex-direction: row;
+      gap:0;
+      justify-content: space-around;
+      margin-bottom: 1.5rem;
+      align-items: center;
+  }
+  
+  .number-container{
+    padding: 0;
+  }
+
+  .line{
+    width:1px;
+    height:50px;
+    background-color: #dbd9d9;
+  }
+  
+  .about-stats{
+      display: flex;
+      flex-direction: column;
+      gap:1.5rem;
+  }
+  
+  .stat .flex{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap:0;
+  }
+  
+  .reward{
+      margin-top: 0;
+  }
+}
